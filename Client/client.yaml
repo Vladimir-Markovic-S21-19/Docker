@@ -1,0 +1,12 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: client
+spec:
+  backoffLimit: 10
+  template:
+    spec:
+      containers:
+        - name: client
+          image: client:0.1
+      restartPolicy: Never
